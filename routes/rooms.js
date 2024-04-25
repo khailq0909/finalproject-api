@@ -1,7 +1,7 @@
 import express from 'express';
 import {createRoom,updateRoom,deleteRoom,getRoom,getAllRoom, getAllRoomByUserId, addComment, countByCity,countByType,searchSuggestions, getAllProvinceExit} from '../controllers/roomController.js'
 import {verifyToken,verifyHomeOwner, verifyAdmin} from '../utils/verifytoken.js';
-import uploadCloud from '../config/Cloudinary.config.js';
+import uploadCloud from '../config/cloudinary.js';
 const router = express.Router();
 
 //CREATE
