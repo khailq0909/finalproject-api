@@ -68,7 +68,7 @@ io.on('connection', (socket) => {
     })
 });
 
-server.listen(3002, () => {
+server.listen(3001, () => {
 connect();
 console.log("Connected to backend.");
 });
