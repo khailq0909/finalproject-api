@@ -30,7 +30,7 @@ console.log("mongoDB disconnected!");
 //middlewares
 app.use(cors({
     origin: "https://myhomestayz.netlify.app",
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST","PUT", "DELETE"],
     credentials: true,
 
 }))
