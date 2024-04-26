@@ -4,7 +4,6 @@ import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import nodemailer from "nodemailer"
 import { createError } from "../utils/error.js";
-import {check, validationResult} from 'express-validator'
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -41,7 +40,7 @@ export const register = async (req, res, next) => {
       subject: "Verify your email",
       html:`<h2>${newUser.lastname}! Thanks for joining with MyHomeStay.com</h2>
       <h4>Please verify your email to continue...</h4>
-      <a href="http://localhost:3001/api/users/verify/${newUser.emailToken}">Click here to verify</a>
+      <a href="https://finalproject-api.onrender.com/api/users/verify/${newUser.emailToken}">Click here to verify</a>
       `
     };
     transporter.sendMail(mailOptions,(err,info)=>{
