@@ -108,12 +108,7 @@ export const login = async (req, res, next) => {
 };
 
 export const logout = async (req, res) => {
-  res.cookie("access_token", "", {
-    httpOnly: true,
-    expires: new Date(0),
-    secure: true
-  });
-  res.send();
+  res.clearCookie('access_token');
 };
 
 export const sendCode = async (req, res) => {
