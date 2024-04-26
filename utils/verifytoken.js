@@ -12,7 +12,7 @@ export const verifyToken = (req, res, next) => {
     next();
     res.status(200).json({ message:"Authentication successful"});
   } catch (error) {
-    next(createError(500,"sone thing went wrong"))
+    res.status(500).json({ message:"some things went wrong"});
   }
 };
 // export const verifyUser = (req, res, next) => {
