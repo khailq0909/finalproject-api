@@ -1,5 +1,4 @@
 import User from "../models/user.js";
-import { createError } from "../utils/error.js";
 
 export const updateUser = async (req, res, next) => {
   try {

@@ -192,7 +192,6 @@ export const changePassword = async (req, res, next) => {
   const salt = bcrypt.genSaltSync(10);
   const hash = bcrypt.hashSync(req.body.password, salt);
   const updateUser = {
-    
     password: hash,
     otpToken: null,
   };
