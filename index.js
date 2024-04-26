@@ -32,7 +32,7 @@ app.use(cors({
     origin: "https://myhomestayz.netlify.app",
     methods: ["GET", "POST","PUT", "DELETE"],
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Origin", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods", "Access-Control-Allow-Credentials"],
+    "Access-Control-Allow-Headers": ["Content-Type", "Authorization", "X-Requested-With", "Origin", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods", "Access-Control-Allow-Credentials"],
 
 }))
 app.use(cookieParser())
