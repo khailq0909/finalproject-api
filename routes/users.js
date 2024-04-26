@@ -42,9 +42,9 @@ router.get("/verify/:token", async(req,res)=>{
             user.emailToken = null;
             user.isVerified = true;
             await user.save();
-            res.redirect("http://localhost:3000/login");
+            res.redirect("https://myhomestayz.netlify.app/login");
         }else{
-            res.redirect("http://localhost:3000/register");
+            res.redirect("https://myhomestayz.netlify.app/register");
             res.status(400).send("email is not verified")
         }
 
