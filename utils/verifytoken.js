@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-import { createError } from "../utils/error";
 
 export const verifyToken = (req, res, next) => {
   const token = req.cookies.access_token;
@@ -38,7 +37,7 @@ export const verifyHomeOwner = (req, res, next) => {
     if (req.isHomeOwner === true || req.isAdmin === true) {
       next(); // User is authorized, proceed to the next middleware
     } else {
-      return res.status(401).json({ message: "Unauthorized: You dont have permission" });
+      return res.status(403).json({ message: "Unauthorized: You dont have permission" });
     }
   } catch (error) {
     return res.status(401).json({ message: "Unauthorized: Invalid access token" });
@@ -57,7 +56,7 @@ export const verifyAdmin = (req, res, next) => {
     if (req.isAdmin === true) {
       next(); // User is authorized, proceed to the next middleware
     } else {
-      return res.status(401).json({ message: "Unauthorized: You dont have permission" });
+      return res.status(403).json({ message: "Unauthorized: You dont have permission" });
     }
   } catch (error) {
     return res.status(401).json({ message: "Unauthorized: Invalid access token" });
