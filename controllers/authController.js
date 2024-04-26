@@ -108,7 +108,10 @@ export const login = async (req, res, next) => {
 };
 
 export const logout = async (req, res) => {
-  res.clearCookie('access_token');
+  res.cookie("access_token", "", {
+    expires: new Date(0),
+  });
+  res.send();
 };
 
 export const sendCode = async (req, res) => {
