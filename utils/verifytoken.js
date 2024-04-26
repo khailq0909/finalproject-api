@@ -1,9 +1,10 @@
 import jwt from "jsonwebtoken";
+import { createError } from "./error";
 
 export const verifyToken = (req, res, next) => {
   const token = req.cookies.access_token;
   if (!token) {
-    return res.status(401).json({ message: "unauthorized", token:token });
+    return res.status(401).json({ message: `unauthorized with token: ${token}`});
   }
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
@@ -11,7 +12,7 @@ export const verifyToken = (req, res, next) => {
     next();
     res.status(200).json({ message:"Authentication successful"});
   } catch (error) {
-    return res.status(401).json({ message: "unauthorized" });
+    next(createError(500,"sone thing went wrong"))
   }
 };
 // export const verifyUser = (req, res, next) => {
